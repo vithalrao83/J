@@ -1,0 +1,25 @@
+class DivideByZeroException extends Exception {
+    DivideByZeroException(String msg) {
+        super(msg);
+    }
+}
+
+public class Point {
+    public static void main(String[] args) {
+        int numerator = 15;
+        int denominator = 2;
+
+        try {
+            if (denominator == 0)
+                throw new DivideByZeroException("Error: Cannot divide a number by zero.");
+
+            System.out.println("Result: " + (numerator / denominator));
+        } 
+        catch (DivideByZeroException e) {
+            System.out.println(e.getMessage());
+        } 
+        finally {
+            System.out.println("I am in final block");
+        }
+    }
+}

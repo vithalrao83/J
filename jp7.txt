@@ -1,0 +1,36 @@
+interface Resizable {
+    void resizeWidth(int width);
+    void resizeHeight(int height);
+}
+
+class Rectangle implements Resizable {
+    private int width, height;
+
+    Rectangle(int w, int h) {
+        width = w;
+        height = h;
+    }
+
+    public void resizeWidth(int w) {
+        width = w;
+    }
+
+    public void resizeHeight(int h) {
+        height = h;
+    }
+
+    void printSize() {
+        System.out.println("Width: " + width + ", Height: " + height);
+    }
+}
+
+public class Point {
+    public static void main(String[] args) {
+        Rectangle rectangle = new Rectangle(100, 150);
+
+        rectangle.printSize();
+        rectangle.resizeWidth(150);
+        rectangle.resizeHeight(200);
+        rectangle.printSize();
+    }
+}
